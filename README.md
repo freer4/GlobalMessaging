@@ -65,7 +65,7 @@ contact_one_id | contact_two_id | message_id | read[bool] | readat[time] | statu
 Transaction information for a set of messages, to avoid modifying message table
 
 
-
+Delegate to services to handle individual platforms. Same method on each service takes same parameters.  
 
 
 User registers with any connected app:
