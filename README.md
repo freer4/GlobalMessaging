@@ -1,71 +1,61 @@
 # GlobalMessaging
-smallest pieces for data
 
-maps to/from each system
-messages
+##### User  
 
-
-standard pieces of data, maps
-
-
-Views
-- Merged views
-- separate views
-
-//future
-- presense
-
-
-
-Our application has users
-Interacts with what may or may not be other users of our application
-
-
-So person has an identity whether they're a user or not. 
-User needs to be able to merge identities (their own) 
-
-
-#####User  
 id | first_name | last_name | user_name 
 
-#####User information
+##### User information
+
 user_id | email | 40 other properties | created | modified
+
 All the information for a user. 
 
-#####User platform preference 
+##### User platform preference 
+
 user_id | platform_id | preference
+
 Order in which to utilize platforms for messaging. Top one with contact for current identity will be used
 
-#####User platform sync
+##### User platform sync
+
 user_id | platform_id | auto_push[bool] | check[bool] | last[datetime] | status
 
-#####Platform
+##### Platform
+
 id | name
 
-#####Identity
+##### Identity
+
 id | user_id | first_name | last_name | user_name | email address (association) //for display
+
 An identity is a collection of contacts we believe are the same person
-Matching email addresses on contacts relate them back to a single user identity automatically. Not necessarily seen by users, as may be a security issue if not true. So only friends confirmed on that 
 
-platform. !!hmm... 
+Matching email addresses on contacts relate them back to a single user identity automatically. Not necessarily seen by users, as may be a security issue if not true. So only friends confirmed on that platform. 
 
-#####Contacts 
+##### Contacts
+
 id | identity_id | platform_id | platform_user_id | platform_token | first_name | last_name | user_name | email address //what we got from platform
-A person on a platform. 
 
-#####Connections
+A person on a platform, whether a user or not. 
+
+##### Connections (friends)
+
 contact_x_id | contact_y_id | platform_id
 
-#####Messages
+##### Messages
+
 id | platform_id | receiver_identity_id | sender_identity_id | message | datetime 
+
 Any message sent or received
 
-#####Conversation status 
+##### Conversation status 
+
 contact_one_id | contact_two_id | message_id | read[bool] | readat[time] | status 
+
 Transaction information for a set of messages, to avoid modifying message table
 
 
-Delegate to services to handle individual platforms. Same method on each service takes same parameters.  
+*Delegate to services to handle individual platforms. Same method on each service takes same parameters.*
 
 
 **User registers with any connected app:**
@@ -114,5 +104,24 @@ Delegate to services to handle individual platforms. Same method on each service
 User adds contact by association with other platforms**
 - Interface sends connection requests to all platforms user is registered with and not already a Connection with
 
+*scribble:*
 
+smallest pieces for data, break down as they come in
 
+maps to/from data for each system 
+
+messages
+
+standard pieces of data, maps
+
+Views
+- Merged views
+- separate views
+
+//future
+- contact presense
+
+Our application has users
+Interacts with what may or may not be other users of our application
+
+So person has an identity whether they're a user or not. 
