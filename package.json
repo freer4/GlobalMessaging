@@ -1,0 +1,25 @@
+{
+  "name": "GlobalMessaging",
+  "version": "1.0.0",
+  "description": "smallest pieces for data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freer4/GlobalMessaging.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/freer4/GlobalMessaging/issues"
+  },
+  "homepage": "https://github.com/freer4/GlobalMessaging#readme",
+  "dependencies": {
+    "hapi": "^18.1.0",
+    "sequelize": "^5.3.0",
+    "sqlite3": "^4.0.6"
+  }
+}
